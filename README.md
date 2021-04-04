@@ -1,4 +1,4 @@
-### Maze generatior
+### Maze generator
 
 #### Use Randomized depth-first search to create a maze
 A maze is a kind of games where a player moves in pathways with many branches to find a way
