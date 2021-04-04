@@ -1,4 +1,4 @@
-#### Maze generatior
+#### Maze generator
 
 ##### Use Randomized depth-first search to create a maze
 
