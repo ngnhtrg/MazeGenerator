@@ -1,6 +1,6 @@
-###Maze generatior
+### Maze generatior
 
-####Use Randomized depth-first search to create a maze
+#### Use Randomized depth-first search to create a maze
 
 Examples:
 ![alt text](https://github.com/ngnhtrg/MazeGenerator/blob/dev/demo/Example_20x20.png)
