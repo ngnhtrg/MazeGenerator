@@ -3,21 +3,21 @@ import Maze
 import Maze_with_graphical_interface
 
 def NewGame(window):
-	"""
-	    START NEW GAME
-	"""
-	global vertical
-	global horizontal
-	global SOLUTION
-	global _WIDTH
-	global _HEIGHT
-	_WIDTH = int(e1.get())
-	_HEIGHT = int(e2.get())
-	grid = Maze.create_maze(_WIDTH, _HEIGHT)
-	Maze_with_graphical_interface.draw_maze(window, grid[0], grid[1], _WIDTH, _HEIGHT)
-	vertical = grid[0]
-	horizontal = grid[1]
-	SOLUTION = grid[2]
+    """
+        START NEW GAME
+    """
+    global vertical
+    global horizontal
+    global SOLUTION
+    global _WIDTH
+    global _HEIGHT
+    _WIDTH = int(e1.get())
+    _HEIGHT = int(e2.get())
+    grid = Maze.create_maze(_WIDTH, _HEIGHT)
+    Maze_with_graphical_interface.draw_maze(window, grid[0], grid[1], _WIDTH, _HEIGHT)
+    vertical = grid[0]
+    horizontal = grid[1]
+    SOLUTION = grid[2]
 
 vertical = []
 horizontal = []
