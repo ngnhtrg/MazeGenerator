@@ -6,6 +6,6 @@ out/certain targets.
 
 Here are some screen shots:
 ![alt text](https://github.com/ngnhtrg/MazeGenerator/blob/dev/demo/Example_20x20.png)
-![alt text](https://github.com/ngnhtrg/MazeGenerator/blob/dev/demo/Example_15x10.png)
+![alt text](https://github.com/ngnhtrg/MazeGenerator/blob/dev/demo/Example_10x15.png)
 
 Link to [Demo Video](https://drive.google.com/drive/folders/1ITDvA07EhP5tSuRzHv43zr5Eq-xvm3HX?usp=sharing)
