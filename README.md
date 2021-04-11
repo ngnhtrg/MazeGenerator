@@ -10,7 +10,7 @@ Here are some screen shots:
 
 Link to [Demo Video](https://drive.google.com/drive/folders/1ITDvA07EhP5tSuRzHv43zr5Eq-xvm3HX?usp=sharing)
 
-New version:
+### New version:
 
 ![alt text](https://github.com/ngnhtrg/MazeGenerator/blob/dev/demo/PlayGameExample.png)
 
