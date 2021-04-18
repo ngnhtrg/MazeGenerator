@@ -4,6 +4,17 @@
 A maze is a kind of games where a player moves in pathways with many branches to find a way
 out/certain targets.
 
+#### Start game:
+Clone repository
+```bash
+git clone https://github.com/ngnhtrg/MazeGenerator.git
+```
+Run
+```bash
+cd MazeGenerator/
+python3 main.py
+```
+
 Here are some screen shots:
 ![alt text](https://github.com/ngnhtrg/MazeGenerator/blob/dev/demo/Example_20x20.png)
 ![alt text](https://github.com/ngnhtrg/MazeGenerator/blob/dev/demo/Example_10x15.png)
