@@ -10,13 +10,13 @@ def NewGame(window):
     global vertical
     global horizontal
     global SOLUTION
-    global _WIDTH
-    global _HEIGHT
+    global WIDTH
+    global HEIGHT
     path = [0]
-    _WIDTH = int(e1.get())
-    _HEIGHT = int(e2.get())
-    grid = Maze.create_maze(_WIDTH, _HEIGHT)
-    play.draw_maze(window, grid[0], grid[1], _WIDTH, _HEIGHT)
+    WIDTH = int(width_input.get())
+    HEIGHT = int(height_input.get())
+    grid = Maze.create_maze(WIDTH, HEIGHT)
+    play.draw_maze(window, grid[0], grid[1], WIDTH, HEIGHT)
     vertical = grid[0]
     horizontal = grid[1]
     SOLUTION = grid[2]
@@ -116,8 +116,8 @@ def go(maze, direction, vertical_lines, horizontal_lines, width, height):
 vertical = []
 horizontal = []
 SOLUTION = []
-_WIDTH = 0
-_HEIGHT = 0
+WIDTH = 0
+HEIGHT = 0
 window = tk.Tk()
 window.title("Maze Generator Game")
 path = []
@@ -126,25 +126,25 @@ maze = tk.Canvas(window, height=500, width=500, bg='white')
 tk.Label(window, text="Width").grid(row=0)
 tk.Label(window, text="Height").grid(row=1)
 
-e1 = tk.Entry(window)
-e2 = tk.Entry(window)
+width_input = tk.Entry(window)
+height_input = tk.Entry(window)
 
-e1.grid(row=0, column=1)
-e2.grid(row=1, column=1)
+width_input.grid(row=0, column=1)
+height_input.grid(row=1, column=1)
 
 
 tk.Button(window, text="Quit",  bg="black", fg="white", command=window.destroy).grid(row=2, column=2)
 
 tk.Button(window, text="New Game",  bg="black", fg="white", command=lambda: NewGame(maze)).grid(row=2, column=0)
 
-tk.Button(window, text="Solution",  bg="black", fg="white", command=lambda: play.get_solution(maze, SOLUTION, _WIDTH, _HEIGHT)).grid(row=2, column=1)
+tk.Button(window, text="Solution",  bg="black", fg="white", command=lambda: play.get_solution(maze, SOLUTION, WIDTH, HEIGHT)).grid(row=2, column=1)
 
-tk.Button(window, text="U",  bg="black", fg="white", command=lambda: go(maze, "U", vertical, horizontal, _WIDTH, _HEIGHT)).grid(row=4, column=4)
+tk.Button(window, text="U",  bg="black", fg="white", command=lambda: go(maze, "U", vertical, horizontal, WIDTH, HEIGHT)).grid(row=4, column=4)
 
-tk.Button(window, text="L",  bg="black", fg="white", command=lambda: go(maze, "L", vertical, horizontal, _WIDTH, _HEIGHT)).grid(row=5, column=3)
+tk.Button(window, text="L",  bg="black", fg="white", command=lambda: go(maze, "L", vertical, horizontal, WIDTH, HEIGHT)).grid(row=5, column=3)
 
-tk.Button(window, text="R",  bg="black", fg="white", command=lambda: go(maze, "R", vertical, horizontal, _WIDTH, _HEIGHT)).grid(row=5, column=5)
+tk.Button(window, text="R",  bg="black", fg="white", command=lambda: go(maze, "R", vertical, horizontal, WIDTH, HEIGHT)).grid(row=5, column=5)
 
-tk.Button(window, text="D",  bg="black", fg="white", command=lambda: go(maze, "D", vertical, horizontal, _WIDTH, _HEIGHT)).grid(row=6, column=4)
+tk.Button(window, text="D",  bg="black", fg="white", command=lambda: go(maze, "D", vertical, horizontal, WIDTH, HEIGHT)).grid(row=6, column=4)
 
 window.mainloop()

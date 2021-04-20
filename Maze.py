@@ -1,6 +1,5 @@
-import tkinter as tk
 import random
-
+import tkinter as tk
 
 def get_neighbours(cell, width, height):
     """
@@ -14,13 +13,13 @@ def get_neighbours(cell, width, height):
         Return: list of neighbour cells
     """
     neighbours = []
-    if ((cell % width) != 0) :
+    if cell % width != 0 :
         neighbours.append(cell - 1)
-    if ((cell % width) != width - 1):
+    if cell % width != width - 1:
         neighbours.append(cell + 1)
-    if (cell >= width):
+    if cell >= width:
         neighbours.append(cell - width)
-    if (cell < height * width - width):
+    if cell < height * width - width:
         neighbours.append(cell + width)		
     return neighbours
 

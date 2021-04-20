@@ -76,7 +76,7 @@ def get_solution(window, vertical_lines, horizontal_lines, solution, width, heig
     x2 = int(segment_len * 1.5)
     y2 = int(segment_len * 1.5)
 
-    maze.create_line([(x1, y1),(x2, y2)], width=2, fill='red')
+    maze.create_line([(x1, y1), (x2, y2)], width=2, fill='red')
 
     for i in range(0, len(solution) - 1):
         x1 = int(segment_len * 1.5) + (solution[i] % width) * segment_len
@@ -89,5 +89,5 @@ def get_solution(window, vertical_lines, horizontal_lines, solution, width, heig
     y1 = int(segment_len * 1.5) + int(solution[-1] / width) * segment_len
     x2 = int(segment_len * (width + 0.5))
     y2 = segment_len * (height + 1)
-    maze.create_line([(x1, y1),(x2, y2)], width=2, fill='red')
+    maze.create_line([(x1, y1), (x2, y2)], width=2, fill='red')
     maze.grid(row=3, column=1)
