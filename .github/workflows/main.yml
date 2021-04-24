@@ -29,5 +29,5 @@ jobs:
       - name: Run
         run: |
           pip install tk
-          python main.py
+          python3 main.py
 
