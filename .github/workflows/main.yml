@@ -29,5 +29,6 @@ jobs:
       - name: Run
         run: |
           sudo apt-get install python3-tk
+          export DISPLAY=":0"
           python3 main.py
 
