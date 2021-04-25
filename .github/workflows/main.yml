@@ -25,10 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      
+      # export DISPLAY=":0"
+      # python3 main.py
       - name: Run
         run: |
           sudo apt-get install python3-tk
-          export DISPLAY=":0"
-          python3 main.py
+          python3
+          import os
+          os.environ["DISPLAY"]
+          
 
