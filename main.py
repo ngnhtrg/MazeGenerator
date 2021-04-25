@@ -1,6 +1,7 @@
 import tkinter as tk
 import Maze
 import play
+import os
 
 def NewGame(window):
     """
@@ -118,10 +119,18 @@ horizontal = []
 SOLUTION = []
 WIDTH = 0
 HEIGHT = 0
+
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using :0.0')
+    os.environ.__setitem__('DISPLAY', ':0.0')
+
+
 window = tk.Tk()
 window.title("Maze Generator Game")
 path = []
 maze = tk.Canvas(window, height=500, width=500, bg='white')
+
+
 
 tk.Label(window, text="Width").grid(row=0)
 tk.Label(window, text="Height").grid(row=1)
