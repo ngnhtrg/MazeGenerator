@@ -30,8 +30,4 @@ jobs:
       - name: Run
         run: |
           sudo apt-get install python3-tk
-          python3
-          import os
-          os.environ["DISPLAY"]
-          
-
+          python3 display.py
