@@ -28,7 +28,7 @@ jobs:
       - name: Install tkinter
         run: sudo apt-get install python3-tk
       - name: Install flake8
-        run: python3 pip install flake8
+        run: python3 -m pip install flake8
       - name: flake8
         run: |
           flake8 Maze.py
