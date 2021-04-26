@@ -31,6 +31,7 @@ jobs:
         run: python3 -m pip install flake8
       - name: flake8
         run: |
+          git checkout dev
           flake8 Maze.py
           flake play.py
           flake8 main.py
