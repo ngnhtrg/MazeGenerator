@@ -1,5 +1,5 @@
 import random
-import tkinter as tk
+
 
 def get_neighbours(cell, width, height):
     """
@@ -13,20 +13,23 @@ def get_neighbours(cell, width, height):
         Return: list of neighbour cells
     """
     neighbours = []
-    if cell % width != 0 :
+    if cell % width != 0:
         neighbours.append(cell - 1)
     if cell % width != width - 1:
         neighbours.append(cell + 1)
     if cell >= width:
         neighbours.append(cell - width)
     if cell < height * width - width:
-        neighbours.append(cell + width)		
+        neighbours.append(cell + width)
     return neighbours
+
 
 def create_maze(WIDTH, HEIGHT):
     """
-    Create the maze using horizontal walls and vertical walls and find the solution
-    Algorithm: Randomized depth-first search --> https://en.wikipedia.org/wiki/Maze_generation_algorithm
+    Create the maze using horizontal walls
+    and vertical walls and find the solution
+    Algorithm: Randomized depth-first search
+    --> https://en.wikipedia.org/wiki/Maze_generation_algorithm
     Return: (vertical_wall, horizontal_wall, solution)
     """
 
@@ -42,29 +45,30 @@ def create_maze(WIDTH, HEIGHT):
     stack.append(initial_cell)
 
     while stack:
-        current_cell = stack[-1]
+        cur_cell = stack[-1]
         stack.pop()
-        neighbours_of_current_cell = get_neighbours(current_cell, WIDTH, HEIGHT)
-        unvisited_neighbours = [x for x in neighbours_of_current_cell if x not in visited]
+        neighbours_of_cur_cell = get_neighbours(cur_cell, WIDTH, HEIGHT)
+        unvisited_neighbours = [
+            x for x in neighbours_of_cur_cell if x not in visited]
         if unvisited_neighbours:
-            stack.append(current_cell)
+            stack.append(cur_cell)
             random_index = random.randrange(len(unvisited_neighbours))
             chosen_cell = unvisited_neighbours[random_index]
 
-            if chosen_cell - current_cell == 1:
-                index = int(current_cell / WIDTH) + (chosen_cell % WIDTH) * HEIGHT
+            if chosen_cell - cur_cell == 1:
+                index = int(cur_cell / WIDTH) + (chosen_cell % WIDTH) * HEIGHT
                 vertical_wall[index] = 0
 
-            elif current_cell - chosen_cell == 1:
-                index = int(chosen_cell / WIDTH) + (current_cell % WIDTH) * HEIGHT
+            elif cur_cell - chosen_cell == 1:
+                index = int(chosen_cell / WIDTH) + (cur_cell % WIDTH) * HEIGHT
                 vertical_wall[index] = 0
 
-            elif chosen_cell - current_cell == WIDTH:
-                index = current_cell % WIDTH + int(chosen_cell / WIDTH) * WIDTH
+            elif chosen_cell - cur_cell == WIDTH:
+                index = cur_cell % WIDTH + int(chosen_cell / WIDTH) * WIDTH
                 horizontal_wall[index] = 0
 
-            else: 
-                index = chosen_cell % WIDTH + int(current_cell / WIDTH) * WIDTH
+            else:
+                index = chosen_cell % WIDTH + int(cur_cell / WIDTH) * WIDTH
                 horizontal_wall[index] = 0
 
             visited.add(chosen_cell)

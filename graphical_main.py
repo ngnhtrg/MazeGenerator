@@ -2,6 +2,7 @@ import tkinter as tk
 import Maze
 import Maze_with_graphical_interface
 
+
 def NewGame(window, segment_length, starting_point):
     """
         START NEW GAME
@@ -14,10 +15,13 @@ def NewGame(window, segment_length, starting_point):
     WIDTH = int(width_input.get())
     HEIGHT = int(height_input.get())
     grid = Maze.create_maze(WIDTH, HEIGHT)
-    Maze_with_graphical_interface.draw_maze(window, grid[0], grid[1], WIDTH, HEIGHT, segment_length, starting_point)
+    Maze_with_graphical_interface.draw_maze(
+        window, grid[0], grid[1],
+        WIDTH, HEIGHT, segment_length, starting_point)
     vertical = grid[0]
     horizontal = grid[1]
     SOLUTION = grid[2]
+
 
 vertical = []
 horizontal = []
@@ -41,10 +45,23 @@ width_input.grid(row=0, column=1)
 height_input.grid(row=1, column=1)
 
 
-tk.Button(window, text="Quit",  bg="black", fg="white", command=window.destroy).grid(row=2, column=2)
+tk.Button(
+    window, text="Quit", bg="black", fg="white",
+    command=window.destroy
+    ).grid(row=2, column=2)
 
-tk.Button(window, text="New Game",  bg="black", fg="white", command=lambda: NewGame(window, segment_length, starting_point)).grid(row=2, column=0)
+tk.Button(
+    window,
+    text="New Game", bg="black", fg="white",
+    command=lambda: NewGame(window, segment_length, starting_point)
+    ).grid(row=2, column=0)
 
-tk.Button(window, text="Solution",  bg="black", fg="white", command=lambda: Maze_with_graphical_interface.get_solution(window,vertical, horizontal, SOLUTION, WIDTH,  HEIGHT, segment_length,starting_point )).grid(row=2, column=1)
+tk.Button(
+    window,
+    text="Solution", bg="black", fg="white",
+    command=lambda: Maze_with_graphical_interface.get_solution(
+        window, vertical, horizontal,
+        SOLUTION, WIDTH, HEIGHT, segment_length, starting_point)
+    ).grid(row=2, column=1)
 
 window.mainloop()
