@@ -34,5 +34,5 @@ jobs:
           git fetch
           git checkout dev
           flake8 Maze.py
-          flake play.py
+          flake8 play.py
           flake8 main.py
